@@ -1,0 +1,28 @@
+<mat-card class="size-of-card">
+  <h2 style="padding-left: 100px; color: bisque;"><b>Login Form</b></h2>
+  <form [formGroup]="passemail">
+<div class="login">
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="pat@example.com" formControlName="email" name="Username" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>
+
+  <mat-form-field>
+    <mat-label>password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" name="password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  </form>
+
+  <div class="button">
+    <button mat-raised-button color="primary" (click)="pass()">Login</button>
+  </div>
+  </mat-card>
+  <app-table1></app-table1>
+  <app-table2></app-table2>
+
+  
